@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Explorer from "./Pages/Explore";
 import  Home from "./Pages/Home";
 import Singlepage from "./Pages/Singlepage";
 const App = () => {
@@ -8,7 +9,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="newpage" element={<Singlepage />} />
+          <Route path="profile" element={<Singlepage />} />
+          <Route path="explorer" element={<Explorer />} />
         </Routes>
       </BrowserRouter>
     </>

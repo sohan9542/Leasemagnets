@@ -22,7 +22,8 @@ export default function CardComponent({ item }) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }} className="shadow_custom">
+   <div className=" relative hover_awesome">
+      <Card sx={{ maxWidth: 345 }} className="shadow_custom">
       <div className=" w-full flex items-center justify-between pl-2 py-1">
         <div className=" flex items-center gap-1">
           {item.url.includes("instagram") && (
@@ -46,7 +47,7 @@ export default function CardComponent({ item }) {
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
         >
-          <MoreVertIcon />
+          <MoreVertIcon className=" cursor-pointer"/>
         </IconButton>
 
         <Menu
@@ -110,14 +111,41 @@ export default function CardComponent({ item }) {
       </div>
       <div className=" w-full grid grid-cols-8 gap-1 p-2">
         {item.credits.map((item, ind) => (
-          <img
+     
+            <img
             key={ind}
             src={item.user.avatarUrl}
-            className=" h-8 w-8 rounded-full cursor-pointer"
+            className=" h-8 w-8 rounded-full  cursor-pointer"
             alt=""
           />
+      
+    
         ))}
       </div>
+
     </Card>
+    <div className=" awesome shadow-lg gap-3">
+<div className=" h-4 w-4 bg-white absolute toltip_card">
+
+</div>
+{item.credits.map((item, ind) => (
+     
+    <div className=" flex items-center gap-3 px-3 hover:bg-gray-50">
+       <img
+     key={ind}
+     src={item.user.avatarUrl}
+     className=" h-8 w-8 rounded-full hover_awesome cursor-pointer"
+     alt=""
+   />
+   <div>
+     <h1 className=" text-sm font-semibold text-gray-800">{item.user.name}</h1>
+     <h6 className=" text-sm text-gray-500">{item.user.username}</h6>
+   </div>
+    </div>
+
+
+ ))}
+    </div>
+   </div>
   );
 }
