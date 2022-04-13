@@ -18,7 +18,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { FormControlLabel } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 
-const Home = () => {
+const Post = () => {
   const COUNT_FORMATS = [
     {
       // 0 - 999
@@ -569,4 +569,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Post;

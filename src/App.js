@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Explorer from "./Pages/Explore";
-import  Home from "./Pages/Home";
+import  Post from "./Pages/Home";
+import Home from "./Pages/Landing";
 import Singlepage from "./Pages/Singlepage";
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
+          <Route  path="post" element={<Post />} />
           <Route path="profile" element={<Singlepage />} />
           <Route path="explorer" element={<Explorer />} />
         </Routes>
